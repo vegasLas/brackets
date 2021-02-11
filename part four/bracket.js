@@ -17,16 +17,13 @@ function bracket(a) {
       Math.random() * Math.floor(2)
     );
     ss = random === 1 ? opening['{'] + closing['}'] : opening['['] + closing[']']
+    if (ss[ss.length - 1] === s[s.length - 1]) {
+      ss = random === 0 ? opening['{'] + closing['}'] : opening['['] + closing[']']
+    }
     if (!(i % 3)) {
-      if (ss[ss.length - 1] === s[s.length - 1]) {
-        ss = random === 0 ? opening['{'] + closing['}'] : opening['['] + closing[']']
-      }
       s = s.substr(0, s.length - 1) + ss + s[s.length - 1]
     }
     else if (!(i % 2)) {
-      if (ss[ss.length - 1] === s[s.length - 1]) {
-        ss = random === 0 ? opening['{'] + closing['}'] : opening['['] + closing[']']
-      }
       s += ss
     }
     else {
